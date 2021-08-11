@@ -24,7 +24,6 @@ const BodyHome = () => {
           <View style={styles.containerProducts}>
             <View style={styles.headerProducts}>
               <Text style={styles.title}>Products</Text>
-              <BuyNow style={{ flex: 1 }} title="View all" />
             </View>
             <ProductsList />
           </View>
@@ -71,7 +70,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    flex: 4,
+    flex: 1,
     fontWeight: "bold",
     fontSize: 24,
     color: "darkorange",
