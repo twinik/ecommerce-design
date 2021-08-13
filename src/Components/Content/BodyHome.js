@@ -12,8 +12,8 @@ import ProductsList from "../Lists/ProductsList";
 const BodyHome = () => {
   return (
     <View style={{ flex: 10 }}>
-      <ScrollView>
-        <View style={styles.backgroundDesign} />
+
+      <View style={styles.backgroundDesign} />
         <View style={styles.bodyContent}>
           <View style={styles.containerCarousel}>
             <CarouselCards />
@@ -29,7 +29,9 @@ const BodyHome = () => {
             <ProductsList />
           </View>
         </View>
-      </ScrollView>
+
+
+        
     </View>
   );
 };
