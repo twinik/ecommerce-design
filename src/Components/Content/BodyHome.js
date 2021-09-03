@@ -12,25 +12,21 @@ import ProductsList from "../Lists/ProductsList";
 const BodyHome = () => {
   return (
     <View style={{ flex: 10 }}>
-
       <View style={styles.backgroundDesign} />
-        <View style={styles.bodyContent}>
-          <View style={styles.containerCarousel}>
-            <CarouselCards />
-          </View>
-          <View style={styles.containerMiniCards}>
-            <MiniCardsGroup />
-          </View>
-          <View style={styles.containerProducts}>
-            <View style={styles.headerProducts}>
-              <Text style={styles.title}>Products</Text>
-            </View>
-            <ProductsList />
-          </View>
+      <View style={styles.bodyContent}>
+        <View style={styles.containerCarousel}>
+          <CarouselCards />
         </View>
-
-
-        
+        <View style={styles.containerMiniCards}>
+          <MiniCardsGroup />
+        </View>
+        <View style={styles.containerProducts}>
+          <View style={styles.headerProducts}>
+            <Text style={styles.title}>Products</Text>
+          </View>
+          <ProductsList />
+        </View>
+      </View>
     </View>
   );
 };
