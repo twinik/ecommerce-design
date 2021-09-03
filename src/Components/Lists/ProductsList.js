@@ -17,9 +17,7 @@ const ProductsList = () => {
     </View>
   );
 
-  const renderItemProduct = ({ item }) => (
-    <ProductCard onPress={() => alert(item.id)} item={item} />
-  );
+  const renderItemProduct = ({ item }) => <ProductCard item={item} />;
 
   return (
     <View>
