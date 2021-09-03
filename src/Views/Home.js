@@ -7,6 +7,7 @@ import BodyHome from "../Components/Content/BodyHome";
 
 const Home = ({ navigation }) => {
   StatusBar.setBackgroundColor("darkorange", true);
+  StatusBar.setBarStyle("white");
 
   return (
     <SafeAreaView style={styles.container}>

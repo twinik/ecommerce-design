@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, Modal } from "react-native";
+import { StyleSheet, Modal } from "react-native";
 
 import BodyModalProduct from "../Content/BodyModalProduct";
 

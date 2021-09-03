@@ -1,12 +1,9 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-import { ScrollView } from "native-base";
-
 import CarouselCards from "../Cards/CarouselCards";
 import MiniCardsGroup from "../Cards/MiniCardsGroup";
 
-import BuyNow from "../Buttons/BuyNow";
 import ProductsList from "../Lists/ProductsList";
 
 const BodyHome = () => {
