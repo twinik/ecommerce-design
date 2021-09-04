@@ -37,27 +37,22 @@ const BodyModalProduct = ({ item, setModalVisible, modalVisible }) => {
 
           <View style={styles.containerBody}>
             <ScrollView>
-              <View style={{ flex: 1, flexDirection: "row" }}>
-                <View style={{ flex: 7 }}>
-                  <Text style={{ fontSize: 25, fontWeight: "bold" }}>
-                    {item.title}
-                  </Text>
-                  <Text style={{ fontSize: 22 }}>${item.price}</Text>
-                </View>
-
-                <View style={styles.containerFavShare}>
-                  <IconButton
-                    icon={<AntDesign name="hearto" size={24} color="black" />}
-                    style={[styles.favShare, { marginRight: 1 }]}
-                  />
-                  <IconButton
-                    icon={
-                      <EvilIcons name="share-google" size={35} color="black" />
-                    }
-                    style={[styles.favShare, { marginLeft: 1 }]}
-                  />
-                </View>
+              <View style={{ flex: 7, flexDirection: "row" }}>
+                <Text style={styles.title}>{item.title}</Text>
+                {/* <View style={[styles.center, { flexDirection: "row" }]}>
+                  <TouchableOpacity
+                    onPress={() => {
+                      alert("Share");
+                    }}
+                  >
+                    <EvilIcons name="share-google" size={35} color="black" />
+                  </TouchableOpacity>
+                  <TouchableOpacity style={{ flex: 1 }}>
+                    <AntDesign name="hearto" size={24} color="black" />
+                  </TouchableOpacity>
+                </View> */}
               </View>
+              <Text style={styles.price}>${item.price}</Text>
             </ScrollView>
           </View>
 
@@ -78,6 +73,12 @@ const BodyModalProduct = ({ item, setModalVisible, modalVisible }) => {
 export default BodyModalProduct;
 
 const styles = StyleSheet.create({
+  center: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
   container: {
     flex: 1,
     width: "100%",
@@ -88,6 +89,7 @@ const styles = StyleSheet.create({
   containerBody: {
     flex: 5,
     marginVertical: 5,
+    margin: 2,
   },
 
   containerFavShare: {
@@ -140,6 +142,17 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
 
+  title: {
+    flex: 3,
+    fontSize: 25,
+    fontWeight: "bold",
+  },
+
+  price: {
+    fontSize: 22,
+    fontWeight: "bold",
+  },
+
   img: {
     width: "100%",
     height: "100%",
@@ -162,13 +175,5 @@ const styles = StyleSheet.create({
     backgroundColor: "darkorange",
     borderRadius: 10,
     marginLeft: 5,
-  },
-
-  favShare: {
-    backgroundColor: "#F5F5F5",
-    borderRadius: 10,
-    height: "60%",
-    width: "40%",
-    marginRight: 1,
   },
 });

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, TouchableOpacity, Text, StyleSheet, Image } from "react-native";
-import { MaterialIcons, Feather } from "@expo/vector-icons";
+import { MaterialIcons, Feather, AntDesign } from "@expo/vector-icons";
 
 import ModalProduct from "../Modals/ModalProduct";
 
@@ -22,7 +22,7 @@ function ProductCard({ item }) {
 
       <View style={styles.buttonsCard}>
         <TouchableOpacity style={{ flex: 1 }}>
-          <MaterialIcons name={"favorite-outline"} size={23} color="black" />
+          <AntDesign name="hearto" size={23} color="black" />
         </TouchableOpacity>
         <View style={{ flex: 3 }} />
         <TouchableOpacity style={{ flex: 1 }}>
