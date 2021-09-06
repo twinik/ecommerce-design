@@ -7,8 +7,14 @@ import {
   Image,
   Dimensions,
   ScrollView,
+  FlatList,
 } from "react-native";
-import { AntDesign, EvilIcons } from "@expo/vector-icons";
+import {
+  AntDesign,
+  EvilIcons,
+  FontAwesome,
+  MaterialIcons,
+} from "@expo/vector-icons";
 
 import GenericButton from "../Buttons/GenericButton";
 import Close from "../Buttons/Close";
@@ -17,7 +23,15 @@ import IconButton from "../Buttons/IconButton";
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
+const sizes = [6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5];
+
 const BodyModalProduct = ({ item, setModalVisible, modalVisible }) => {
+  const renderItemSize = ({ item }) => {
+    <View>
+      <Text>{item}</Text>;
+    </View>;
+  };
+
   return (
     <View style={styles.centeredView}>
       <View style={styles.modalView}>
@@ -37,8 +51,21 @@ const BodyModalProduct = ({ item, setModalVisible, modalVisible }) => {
 
           <View style={styles.containerBody}>
             <ScrollView>
+              <View style={{ flex: 1, flexDirection: "row" }}>
+                <Text style={{ flex: 1, color: "grey" }}>Men's shoes</Text>
+                <View
+                  style={{ justifyContent: "flex-end", flexDirection: "row" }}
+                >
+                  <View style={{ justifyContent: "center" }}>
+                    <FontAwesome name="star" size={16} color="orange" />
+                  </View>
+                  <Text style={{ color: "grey" }}> 4.5</Text>
+                </View>
+              </View>
+
               <View style={{ flex: 7, flexDirection: "row" }}>
                 <Text style={styles.title}>{item.title}</Text>
+                <Text style={styles.price}>${item.price}</Text>
                 {/* <View style={[styles.center, { flexDirection: "row" }]}>
                   <TouchableOpacity
                     onPress={() => {
@@ -52,17 +79,45 @@ const BodyModalProduct = ({ item, setModalVisible, modalVisible }) => {
                   </TouchableOpacity>
                 </View> */}
               </View>
-              <Text style={styles.price}>${item.price}</Text>
+
+              <View style={styles.containerSizes}>
+                <Text style={{ fontWeight: "bold", fontSize: 15 }}>Sizes:</Text>
+                <FlatList
+                  data={sizes}
+                  horizontal={true}
+                  renderItem={renderItemSize}
+                  keyExtractor={(index) => index}
+                />
+                {/*                 <View style={{ flexDirection: "row" }}>
+                  {sizes.map((i) => (
+                    <TouchableOpacity
+                      style={{
+                        flex: 1,
+                        backgroundColor: "lightgrey",
+                        borderRadius: 10,
+                        marginHorizontal: 3,
+                      }}
+                    >
+                      <Text>{i}</Text>
+                    </TouchableOpacity>
+                  ))}
+                </View> */}
+              </View>
             </ScrollView>
           </View>
 
           <View style={styles.containerButtons}>
+            <IconButton
+              icon={
+                <MaterialIcons name="favorite-border" size={25} color="black" />
+              }
+              style={styles.fav}
+            />
             <GenericButton
               title="Add to Cart"
-              style={styles.addCart}
-              styleText={{ color: "black" }}
+              style={styles.buyNow}
+              styleText={{ fontWeight: "bold" }}
             />
-            <GenericButton title="Buy Now" style={styles.buyNow} />
           </View>
         </View>
       </View>
@@ -88,7 +143,8 @@ const styles = StyleSheet.create({
 
   containerBody: {
     flex: 5,
-    marginVertical: 5,
+    marginVertical: 10,
+    marginTop: 20,
     margin: 2,
   },
 
@@ -97,6 +153,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
+  },
+
+  containerSizes: {
+    flex: 2,
+    marginTop: 15,
+    backgroundColor: "pink",
   },
 
   containerButtons: {
@@ -150,7 +212,6 @@ const styles = StyleSheet.create({
 
   price: {
     fontSize: 22,
-    fontWeight: "bold",
   },
 
   img: {
@@ -162,18 +223,17 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
 
-  addCart: {
-    width: "48%",
-    height: "90%",
+  fav: {
+    flex: 1,
     backgroundColor: "#F5F5F5",
-    borderRadius: 10,
-    marginRight: 5,
+    borderRadius: 30,
+    height: "90%",
   },
   buyNow: {
-    width: "48%",
+    flex: 4,
     height: "90%",
     backgroundColor: "darkorange",
-    borderRadius: 10,
+    borderRadius: 30,
     marginLeft: 5,
   },
 });

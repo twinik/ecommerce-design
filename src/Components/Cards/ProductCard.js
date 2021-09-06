@@ -22,7 +22,7 @@ function ProductCard({ item }) {
 
       <View style={styles.buttonsCard}>
         <TouchableOpacity style={{ flex: 1 }}>
-          <AntDesign name="hearto" size={23} color="black" />
+          <MaterialIcons name="favorite-outline" size={23} color="black" />
         </TouchableOpacity>
         <View style={{ flex: 3 }} />
         <TouchableOpacity style={{ flex: 1 }}>
