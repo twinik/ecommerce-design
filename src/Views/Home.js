@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, StatusBar, SafeAreaView } from "react-native";
+import { StyleSheet, StatusBar, SafeAreaView } from "react-native";
 import { global } from "../Styles/Global";
 
 import Navbar from "../Components/Navbar";
