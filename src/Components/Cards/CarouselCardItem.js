@@ -16,7 +16,7 @@ const windowWidth = Dimensions.get("window").width;
 
 const CarouselCardItem = ({ item, index }) => {
   return (
-    <TouchableOpacity style={styles.container} key={index}>
+    <View style={styles.container} key={index}>
       <View style={{ flex: 1.3 }}>
         <Image source={{ uri: item.imgUrl }} style={styles.image} />
       </View>
@@ -30,7 +30,7 @@ const CarouselCardItem = ({ item, index }) => {
           onPress={() => alert("BuyNow")}
         />
       </View>
-    </TouchableOpacity>
+    </View>
   );
 };
 const styles = StyleSheet.create({
