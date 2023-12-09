@@ -5,10 +5,10 @@ class BuyNow extends React.Component {
   render() {
     return (
       <TouchableOpacity
-        style={[styles.button, this.props.style]}
+        style={[styles.boton, this.props.style]}
         onPress={this.props.onPress}
       >
-        <Text style={styles.text}>{this.props.title}</Text>
+        <Text style={styles.texto}>{this.props.title}</Text>
       </TouchableOpacity>
     );
   }
@@ -17,7 +17,7 @@ class BuyNow extends React.Component {
 export default BuyNow;
 
 const styles = StyleSheet.create({
-  button: {
+  boton: {
     backgroundColor: "#472B0A",
     padding: 5,
     color: "#fff",
@@ -26,7 +26,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     width: 70,
     height: 30,
-
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -37,7 +36,7 @@ const styles = StyleSheet.create({
 
     elevation: 5,
   },
-  text: {
+  texto: {
     color: "#fff",
     fontSize: 12,
   },

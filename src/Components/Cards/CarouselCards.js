@@ -1,9 +1,8 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
+import Carousel, { Pagination } from "react-native-snap-carousel";
 import CarouselCardItem, { SLIDER_WIDTH, ITEM_WIDTH } from "./CarouselCardItem";
 import data from "../Data/Data";
-
-import Carousel from "react-native-snap-carousel";
 
 const CarouselCards = () => {
   const [index, setIndex] = React.useState(0);
@@ -21,6 +20,22 @@ const CarouselCards = () => {
         onSnapToItem={(index) => setIndex(index)}
         useScrollView={true}
       />
+      {/*
+      <Pagination
+        dotsLength={data.length}
+        activeDotIndex={index}
+        carouselRef={isCarousel}
+        dotStyle={{
+          width: 7,
+          height: 7,
+          borderRadius: 5,
+          backgroundColor: "rgba(0, 0, 0, 0.92)",
+        }}
+        inactiveDotOpacity={0.4}
+        inactiveDotScale={0.6}
+        tappableDots={true}
+      /> 
+      */}
     </View>
   );
 };

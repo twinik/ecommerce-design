@@ -1,29 +1,35 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
+import { ScrollView } from "native-base";
+
 import CarouselCards from "../Cards/CarouselCards";
 import MiniCardsGroup from "../Cards/MiniCardsGroup";
 
+import BuyNow from "../Buttons/BuyNow";
 import ProductsList from "../Lists/ProductsList";
 
 const BodyHome = () => {
   return (
     <View style={{ flex: 10 }}>
-      <View style={styles.backgroundDesign} />
-      <View style={styles.bodyContent}>
-        <View style={styles.containerCarousel}>
-          <CarouselCards />
-        </View>
-        <View style={styles.containerMiniCards}>
-          <MiniCardsGroup />
-        </View>
-        <View style={styles.containerProducts}>
-          <View style={styles.headerProducts}>
-            <Text style={styles.title}>Products</Text>
+      <ScrollView>
+        <View style={styles.backgroundDesign} />
+        <View style={styles.bodyContent}>
+          <View style={styles.containerCarousel}>
+            <CarouselCards />
           </View>
-          <ProductsList />
+          <View style={styles.containerMiniCards}>
+            <MiniCardsGroup />
+          </View>
+          <View style={styles.containerProducts}>
+            <View style={styles.headerProducts}>
+              <Text style={styles.title}>Products</Text>
+              <BuyNow style={{ flex: 1 }} title="View all" />
+            </View>
+            <ProductsList />
+          </View>
         </View>
-      </View>
+      </ScrollView>
     </View>
   );
 };
@@ -65,7 +71,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    flex: 1,
+    flex: 4,
     fontWeight: "bold",
     fontSize: 24,
     color: "darkorange",

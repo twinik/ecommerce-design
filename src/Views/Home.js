@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, StatusBar, SafeAreaView } from "react-native";
+import { View, StyleSheet, StatusBar, SafeAreaView } from "react-native";
 import { global } from "../Styles/Global";
 
 import Navbar from "../Components/Navbar";
@@ -7,7 +7,6 @@ import BodyHome from "../Components/Content/BodyHome";
 
 const Home = ({ navigation }) => {
   StatusBar.setBackgroundColor("darkorange", true);
-  StatusBar.setBarStyle("white");
 
   return (
     <SafeAreaView style={styles.container}>

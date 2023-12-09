@@ -1,32 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, TouchableOpacity, Text, StyleSheet, Image } from "react-native";
-import { MaterialIcons, Feather, AntDesign } from "@expo/vector-icons";
+import { MaterialIcons, Feather } from "@expo/vector-icons";
 
-import ModalProduct from "../Modals/ModalProduct";
-
-function ProductCard({ item }) {
-  const [modalVisible, setModalVisible] = useState(false);
-
+function ProductCard({ onPress, item }) {
   return (
-    <TouchableOpacity
-      style={styles.container}
-      onPress={() => {
-        setModalVisible(true);
-      }}
-    >
-      <ModalProduct
-        item={item}
-        setModalVisible={setModalVisible}
-        modalVisible={modalVisible}
-      />
-
-      <View style={styles.buttonsCard}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
+      <View style={{ flex: 0.5, flexDirection: "row", margin: 5 }}>
         <TouchableOpacity style={{ flex: 1 }}>
-          <MaterialIcons name="favorite-outline" size={23} color="black" />
+          <MaterialIcons name="favorite-outline" size={20} color="black" />
         </TouchableOpacity>
-        <View style={{ flex: 3 }} />
-        <TouchableOpacity style={{ flex: 1 }}>
-          <Feather name="shopping-bag" size={23} color="black" />
+        <TouchableOpacity style={{ flex: 1, alignItems: "flex-end" }}>
+          <Feather name="shopping-bag" size={20} color="black" />
         </TouchableOpacity>
       </View>
 
@@ -40,7 +24,9 @@ function ProductCard({ item }) {
       </View>
 
       <View style={styles.dataProduct}>
-        <Text style={{ color: "darkorange", fontSize: 12 }}>New</Text>
+        {(item.new && (
+          <Text style={{ color: "darkorange", fontSize: 12 }}>New</Text>
+        )) || <Text style={{ color: "transparent", fontSize: 12 }}></Text>}
         <Text style={styles.title}>{item.title}</Text>
         <Text style={styles.price}>${item.price}</Text>
       </View>
@@ -70,11 +56,6 @@ const styles = StyleSheet.create({
   dataProduct: {
     flex: 1.2,
     marginHorizontal: "5%",
-  },
-  buttonsCard: {
-    flex: 0.5,
-    flexDirection: "row",
-    margin: 5,
   },
 
   img: {
