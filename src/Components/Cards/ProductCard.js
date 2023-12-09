@@ -37,7 +37,6 @@ function ProductCard({ onPress, item }) {
 const styles = StyleSheet.create({
   container: {
     width: 150,
-    height: 220,
     backgroundColor: "white",
     margin: 10,
     padding: 5,

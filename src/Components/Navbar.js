@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, View, TouchableOpacity, Image } from "react-native";
 import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 
-const Navbar = ({ fav, profile }) => {
+const Navbar = ({ cart, profile }) => {
   return (
     <View style={styles.menuHead}>
       <View style={styles.headerIcons}>
@@ -14,8 +14,8 @@ const Navbar = ({ fav, profile }) => {
         </View>
 
         <View style={styles.headerCentral}>
-          <TouchableOpacity onPress={fav}>
-            <MaterialIcons name="favorite" size={22} color="white" />
+          <TouchableOpacity onPress={cart}>
+            <Ionicons name="ios-cart" size={22} color="white" />
           </TouchableOpacity>
         </View>
 

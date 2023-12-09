@@ -11,7 +11,7 @@ const Home = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <Navbar
-        fav={() => navigation.navigate("Favorites")}
+        cart={() => navigation.navigate("Cart")}
         profile={() => navigation.navigate("Profile")}
       />
       <BodyHome />
